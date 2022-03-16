@@ -1,0 +1,90 @@
+<view wx:if="{{lang}}">
+  <form name = "userForm" bindsubmit = "formSubmit" bindreset = "formReset">
+
+<view class = "title">My Information</view>
+
+
+<view class = "txt">1. Name</view>
+<view class = "box">
+  <view class = "fillInBlank"> 
+    <input id = "userName" name = "userName" type="text" placeholder = "Please enter your real name here." focus="True" value = "{{userName}}" bindconfirm="" maxlength="20"></input>
+  </view>
+</view>
+
+
+
+
+
+
+<view class = "txt">2. ID</view>
+<view class = "box">
+  <view class = "fillInBlank"> 
+    <input id = "ID" name = "ID" type="text" placeholder = "Please enter your ID here." maxlength="11" value = "{{ID}}"></input>
+  </view>
+</view>
+
+
+<view class = "btn-type">
+  <view>
+    <button form-type="submit" type="primary" plain>Submit</button>
+  </view>
+  <view class = "pad">
+    <button form-type="reset" type = "warn" plain>Reset</button>
+  </view>
+</view>
+</form>
+
+
+
+
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{!lang}}">
+  <form name = "userForm" bindsubmit = "formSubmit" bindreset = "formReset">
+
+<view class = "title">个人信息</view>
+
+
+<view class = "txt">1. 姓名</view>
+<view class = "box">
+  <view class = "fillInBlank"> 
+    <input id = "userName" name = "userName" type="text" placeholder = "请输入你的姓名" focus="True" value = "{{userName}}" bindconfirm="" maxlength="20"></input>
+  </view>
+</view>
+
+
+
+
+
+
+<view class = "txt">2. ID</view>
+<view class = "box">
+  <view class = "fillInBlank"> 
+    <input id = "ID" name = "ID" type="text" placeholder = "请输入你的ID" maxlength="11" value = "{{ID}}"></input>
+  </view>
+</view>
+
+
+<view class = "btn-type">
+  <view>
+    <button form-type="submit" type="primary" plain>提交</button>
+  </view>
+  <view class = "pad">
+    <button form-type="reset" type = "warn" plain>重置</button>
+  </view>
+</view>
+</form>
+</view>

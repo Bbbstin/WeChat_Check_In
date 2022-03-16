@@ -1,0 +1,171 @@
+/* pages/statistics/statistics.wxss */
+@import '/pages/launch1/launch1.wxss';
+page {
+	width: 100%;
+}
+
+.box1{padding: 10rpx 20rpx;}
+.box0{padding: 1rpx 1rpx 1rpx 1rpx; width: 25%}
+.select2{
+  position: relative;
+  left: 328rpx;
+}
+
+.box{padding: 20rpx 20rpx 50rpx 20rpx;}
+.container{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+.container .txt{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+}
+
+.container .txt1{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.container .name{font-size: 45rpx;}
+.container .teacher{font-size: 30rpx; color: rgb(110, 109, 109)}
+.container .time{font-size: 20rpx; color: rgb(110, 109, 109)}
+.container .courseID{font-size: 25rpx; color: rgb(110, 109, 109); text-align: center;}
+
+
+
+.box2{padding: 0 20rpx;}
+
+
+.scrollout{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 179rpx;
+  height: 60rpx;
+}
+
+.headbox{
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1rpx solid #cbcbcb;
+}
+
+.bodybox{
+  border: 1rpx solid #cbcbcb;
+}
+
+.scrollbox{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.scrollbox2{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  background: white;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.line{
+  width: 100%;
+  height: 2rpx;
+  background:#000;
+  }
+
+
+.subtitle{
+  padding: 20rpx 20rpx;
+}
+.subcontainer{
+  padding: 1rpx 20rpx;
+  justify-content: space-between;
+  font-size: 40rpx;
+}
+
+.box3{padding: 360rpx 20rpx;}
+
+
+
+.timeSize{
+  font-size: 45rpx;
+  padding: 1rpx 50rpx;
+}
+
+
+
+.boxLeave{
+  padding: 5rpx 20rpx 5rpx 20rpx;
+}
+.containerLeave{
+  display: flex;
+  padding: 0rpx 30rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+.containerLeave .txt1{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 20rpx;  
+  padding-bottom: 30rpx;
+}
+.containerLeave .name{font-size: 35rpx;}
+.containerLeave .ID{font-size: 25rpx;}
+.leaveBtn{
+  position: absolute;
+  right: 50rpx;
+}
+
+.leaveBtn .disabled{
+  opacity: 0.4
+}
+
+
+
+.box5{
+  padding-left: 200rpx;
+}
+
+.containerMid{
+  align-items: center;
+  text-align: center;
+  display: flex;
+  border: 2rpx solid #000;
+}
+
+.containerMid .bt{
+  justify-content: space-between;
+}
+
+
+
+.box10{padding: 5rpx 20rpx;}
+
+.padding_50{
+  padding: 50rpx;
+}

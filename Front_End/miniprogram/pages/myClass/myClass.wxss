@@ -1,0 +1,27 @@
+.box{padding: 10rpx 20rpx;}
+.container{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+
+.container .txt{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.container .name{font-size: 45rpx;}
+.container .teacher{font-size: 30rpx; color: rgb(110, 109, 109)}
+.container .time{font-size: 20rpx; color: rgb(110, 109, 109)}
+.container .courseID{font-size: 25rpx; color: rgb(110, 109, 109); text-align: center;}
+
+
+.box2{padding: 360rpx 20rpx;}
+
+.box1{padding: 5rpx 20rpx;}

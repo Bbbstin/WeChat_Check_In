@@ -1,0 +1,139 @@
+/* pages/statistics/statistics.wxss */
+@import '/pages/launch1/launch1.wxss';
+
+.select1{
+  position: absolute;
+  left: 120rpx;
+  top: 50rpx;
+}
+
+.select3{
+  position: absolute;
+  right: 120rpx;
+  top: 50rpx;
+}
+
+.select2{
+  position: absolute;
+  left: 320rpx;
+  top: 50rpx;
+}
+
+.box{padding: 150rpx 20rpx 50rpx 20rpx;}
+.container{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+.container .txt{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+}
+
+.container .txt1{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.container .name{font-size: 45rpx;}
+.container .sch{padding-left: 30rpx ;font-size: 45rpx;}
+.container .note{padding-left: 30rpx ; color:rgb(110, 109, 109) ; font-size: 30rpx;}
+.container .teacher{font-size: 30rpx; color: rgb(110, 109, 109)}
+.container .time{font-size: 20rpx; color: rgb(110, 109, 109)}
+.container .courseID{font-size: 25rpx; color: rgb(110, 109, 109); text-align: center;}
+
+
+
+.box2{padding: 0 20rpx;}
+
+.box7{padding: 360rpx 20rpx;}
+
+.scrollout{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 179rpx;
+  height: 60rpx;
+}
+
+.headbox{
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1rpx solid #cbcbcb;
+}
+
+.bodybox{
+  border: 1rpx solid #cbcbcb;
+}
+
+.scrollbox{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.scrollbox2{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  background: white;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+
+
+.subtitle{
+  padding: 20rpx 20rpx;
+}
+.subcontainer{
+  padding: 1rpx 20rpx;
+  justify-content: space-between;
+  font-size: 40rpx;
+}
+
+.box3{padding: 360rpx 20rpx;}
+
+
+
+.container7{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+
+.container7 .txt{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between;  
+  padding-top: 30rpx;  
+  padding-bottom: 30rpx;
+  text-align: center;
+}
+.container7 .name{font-size: 45rpx;}
+
+.padding_12{
+  padding: 25rpx;
+}

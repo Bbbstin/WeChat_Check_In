@@ -1,0 +1,29 @@
+<image src = "https://i0.hdslb.com/bfs/album/b07c239ce6c17d27e8b523b676f6ffefe26a1af6.jpg@1036w.jpg" class = "homePage" mode = "aspectFill"></image>
+
+
+<view wx:if="{{lang}}">
+  <view class = "box">
+    <view class = "buttons">
+      <navigator open-type = "reLaunch" url = "/pages/userInfo/userInfo">
+        <button class = "btn1" type = "primary" plain open-type="getUserInfo" style = "width: 320rpx" bindtap="bindTeacher">I'm a teacher</button>
+      </navigator>
+      <navigator open-type = "reLaunch" url = "/pages/userInfo/userInfo">
+        <button class = "btn2" type = "primary" plain open-type="getUserInfo" style = "width: 320rpx" bindtap="bindStudent">I'm a student</button>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{!lang}}">
+  <view class = "box">
+  <view class = "buttons">
+    <navigator open-type = "reLaunch" url = "/pages/userInfo/userInfo">
+      <button class = "btn1" type = "primary" plain open-type="getUserInfo" style = "width: 320rpx" bindtap="bindTeacher">我是老师</button>
+    </navigator>
+    <navigator open-type = "reLaunch" url = "/pages/userInfo/userInfo">
+      <button class = "btn2" type = "primary" plain open-type="getUserInfo" style = "width: 320rpx" bindtap="bindStudent">我是学生</button>
+    </navigator>
+
+  </view>
+</view>
+</view>

@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/checkIn_stu/checkIn_stu",
+    "pages/checkIn_his/checkIn_his",
+    "pages/launch1/launch1",
+    "pages/markLeave/markLeave",
+    "pages/checkIn/checkIn", 
+    "pages/checkIn_his_tea/checkIn_his_tea",
+    "pages/statistics/statistics",
+    "pages/userInfo/userInfo",
+    "pages/editInfo/editInfo",
+    "pages/myClass/myClass"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/myClass/myClass",
+        "text": "课程",
+        "iconPath": "./image/kecheng_2.png",
+        "selectedIconPath": "./image/kecheng.png"
+
+      },
+      {
+        "pagePath": "pages/statistics/statistics",
+        "text": "统计",
+        "iconPath": "./image/shuju.png",
+        "selectedIconPath": "./image/shuju_2.png"
+      },
+      {
+        "pagePath": "pages/userInfo/userInfo",
+        "text": "我",
+        "iconPath": "./image/my.png",
+        "selectedIconPath": "./image/my_2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

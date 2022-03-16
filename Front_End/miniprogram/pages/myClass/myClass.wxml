@@ -1,0 +1,115 @@
+
+<view wx:if="{{lang}}">
+  <view class = "box2" wx:if="{{!isLogin}}">
+    <navigator url="/pages/editInfo/editInfo">
+      <view class = "container">
+        <view class = "txt">
+          <view class = "name">你暂时无权访问该内容</view> 
+          <view class = "name">—————————</view>
+          <view class = "name">请先登录</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+
+
+  <view wx:if="{{isLogin}}">
+    <view class = "box" wx:for = "{{lessonList}}" wx:key = "index">
+      <navigator class="container" url="/pages/checkIn/checkIn" bindtap="setClassName" data-index="{{index}}">
+        <view class = "txt">
+          <view class = "name">
+            {{item.Name}}
+          </view>
+          <view class = "teacher">
+            {{item.teacher}}
+          </view>
+          <view class = "box1"></view>
+          <view class = "courseID">
+            {{item.Code}}
+          </view>
+          <view class = "teacher">
+            {{item.Place}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{!lang}}">
+  <view class = "box2" wx:if="{{!isLogin}}">
+    <navigator url="/pages/editInfo/editInfo">
+      <view class = "container">
+        <view class = "txt">
+          <view class = "name">你暂时无权访问该内容</view> 
+          <view class = "name">—————————</view>
+          <view class = "name">请先登录</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+
+
+  <view wx:if="{{isLogin}}">
+
+    <view class = "box2" wx:if="{{!lessonList[0]}}">
+        <view class = "container">
+          <view class = "txt">
+            <view class = "name">您暂时没有课</view> 
+            <view class = "name">—————————</view>
+            <view class = "name">请及时享乐</view>
+          </view>
+        </view>
+    </view>
+
+
+
+
+    <view class = "box" wx:for = "{{lessonList}}" wx:key = "index">
+      <navigator class="container" url="/pages/checkIn/checkIn" bindtap="setClassName" data-index="{{index}}">
+        <view class = "txt">
+          <view class = "name">
+            {{item.Name}}
+          </view>
+          <view class = "teacher">
+            {{item.teacher}}
+          </view>
+          <view class = "box1"></view>
+          <view class = "courseID">
+            {{item.Code}}
+          </view>
+          <view class = "teacher">
+            {{item.Place}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

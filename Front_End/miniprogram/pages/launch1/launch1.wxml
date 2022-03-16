@@ -1,0 +1,136 @@
+<view wx:if="{{lang}}"><view class="add-page">
+
+
+    <view class="mod-a">
+        <!-- task name -->
+        <view class="mod t-name">
+            <text class="key">Task Name</text>
+            <input bindinput="bindKeyInput" class="input" maxlength="100" placeholder="Please enter a task name" />
+            <image class="arrow-r" src="../../image/arrow-r-0.png"></image>
+        </view>         
+    </view>
+
+    <view class="mod-a mt20">
+        <!-- place -->
+        <view class="mod t-address" bindtap="chooseLocation">
+            <text class="key">Address</text>
+            <text class="value">{{task.address}}</text>
+            <image class="arrow-r" src="../../image/arrow-r-0.png"></image>
+        </view>
+
+        <!-- time -->
+        <view class="mod t-sign-time">
+            <text class="key">Begin At</text>
+            
+            <picker mode="time" value="{{task.signTime}}" bindchange="setSignTime">
+                <view class="value">{{task.signTime}}<image class="arrow-r" src="../../image/arrow-r-0.png"></image></view>
+            </picker>
+            
+            
+        </view>
+
+        <!-- earliest time -->
+        <view class="mod t-early">
+            <text class="key">End At</text>
+            <text class="value">{{task.signEarlyTime}}</text>
+        </view>
+
+    </view>
+
+
+    <!-- button -->
+    <view class="create">
+        <button type = "primary" plain class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">{{button.txt}}</button>
+    </view>
+
+    <!-- information -->
+    <modal confirm-text="OK"no-confirm  no-cancel hidden="{{modalHidden}}" mask bindconfirm="modalChange">
+        Please complete the request information.
+    </modal>
+
+
+    </view>
+
+
+
+    <view class="img-box">
+        <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="qrcCanvas"/>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{!lang}}">
+    <view class="add-page">
+
+
+    <view class="mod-a">
+        <!-- task name -->
+        <view class="mod t-name">
+            <text class="key">任务名称</text>
+            <input bindinput="bindKeyInput" class="input" maxlength="100" placeholder="请输入任务名称" />
+        </view>         
+    </view>
+
+    <view class="mod-a mt20">
+        <!-- place -->
+        <view class="mod t-address" bindtap="chooseLocation">
+            <text class="key">地址</text>
+            <view class="value">{{task.address}}</view>
+            <image class="arrow-r" src="../../image/arrow-r-0.png"></image>
+        </view>
+
+        <!-- time -->
+        <view class="mod t-sign-time">
+            <text class="key">开始时间</text>
+            
+            <picker mode="time" value="{{task.signTime}}" bindchange="setSignTime">
+                <view class="value">{{task.signTime}}<image class="arrow-r" src="../../image/arrow-r-0.png"></image></view>
+            </picker>
+            
+            
+        </view>
+
+        <!-- earliest time -->
+        <view class="mod t-early">
+            <text class="key">结束时间</text>
+            <text class="value">{{task.signEarlyTime}}</text>
+        </view>
+
+    </view>
+
+
+    <!-- button -->
+    <view class="create">
+        <button type = "primary" plain class="btn {{creating ? 'disabled' : ''}}" bindtap="bindSubmit">{{button.txt_chinese}}</button>
+    </view>
+
+    <!-- information -->
+    <modal confirm-text="OK"no-confirm  no-cancel hidden="{{modalHidden}}" mask bindconfirm="modalChange">
+        请完整填写任务信息
+    </modal>
+
+
+    </view>
+
+
+
+    <view class="img-box">
+        <canvas style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="qrcCanvas"/>
+    </view>
+</view>
+
+<view class="padding_50"></view>

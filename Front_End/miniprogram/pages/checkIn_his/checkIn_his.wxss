@@ -1,0 +1,103 @@
+/* miniprogram/pages/checkIn_his/checkIn_his.wxss */
+.box{padding: 20rpx 20rpx;}
+.container{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+.container .txt{
+  flex: 8; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  padding-left: 30rpx 30rpx 0 30rpx
+}
+.container .courseName{font-size: 45rpx; text-align: center;}
+.container .teacherName{font-size: 38rpx; color: rgb(110, 109, 109); text-align: center;}
+.container .courseTime{font-size: 32rpx; color: rgb(110, 109, 109); text-align: center;}
+.container .courseID{font-size: 25rpx; color: rgb(110, 109, 109); text-align: center;}
+
+
+.box1{padding: 5rpx 20rpx;}
+
+.box16{padding: 30rpx 20rpx;}
+
+.scrollout{
+  display: flex;
+  flex-wrap: nowrap;
+  width: 179rpx;
+  height: 60rpx;
+}
+
+.headbox{
+  background-color: #e0e0e0;
+  color: #000;
+  border: 1rpx solid #cbcbcb;
+}
+
+.bodybox{
+  border: 1rpx solid #cbcbcb;
+}
+
+.scrollbox{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.scrollbox2{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  background: white;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+.scrollbox2_mini{
+  border-collapse: collapse;
+  width: 175.5rpx;
+  height: 60rpx;
+  background: white;
+  flex: 0 0 auto;
+  border-left: 1rpx solid #cbcbcb;
+  border-width: 0 0 0 1rpx;
+  margin: 0;
+  overflow: visible;
+  text-align: center;
+  font-size: small;
+}
+
+
+
+.subtitle{
+  padding: 20rpx 20rpx;
+}
+.subcontainer{
+  padding: 1rpx 20rpx;
+  justify-content: space-between;
+  font-size: 40rpx;
+}
+
+
+
+
+.boxImage{
+  text-align: center;
+}
+.containerImage{
+  display: flex;
+  padding: 100rpx 250rpx;
+}

@@ -1,0 +1,221 @@
+  <!-- 字符串截取：日期 -->
+<wxs module="util">
+  var sub = function(val) {
+      return val.substring(0, 11)
+  }
+  module.exports.sub = sub;
+</wxs>
+<!-- 字符串截取：时刻 -->
+<wxs module="util2">
+  var sub = function(val) {
+      return val.substring(11, 16)
+  }
+  module.exports.sub = sub;
+</wxs>
+<!-- 统计记录总数 -->
+<wxs module="cnt">
+    var obj = function(val) {
+      var objType = typeof val;
+      if(objType == "string"){
+        console.log(val.length)
+        return val.length;
+      }
+    }
+    module.exports.obj = obj;
+</wxs>
+
+
+
+
+<!-- English -->
+<view wx:if="{{lang}}">
+
+  <view class = "box">
+    <view class = "container">
+      <view class = "txt">
+        <view class = "courseName">{{selectedClass_name}}</view>
+          <view class = "teacherName">{{selectedClass_teacher}}</view>
+          <view class = "courseTime">Check-in Times：{{whole}}</view>
+          <view class = "courseID">Code：{{selectedClass_code}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      STATISTIC
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">Total</view>
+          <view class = "scrollbox">Check-In</view>
+          <view class = "scrollbox">Leave</view>
+          <view class = "scrollbox">Absence</view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <scroll-view scroll-x>
+      <view class = "bodybox">
+        <view class = "scrollout">
+          <view class = "scrollbox2">{{whole}}</view>
+          <view class = "scrollbox2">{{cnt1}}</view>
+          <view class = "scrollbox2">{{cnt2}}</view>
+          <view class = "scrollbox2">{{cnt3}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+
+
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      HISTORY
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">#</view>
+          <view class = "scrollbox">Date</view>
+          <view class = "scrollbox">Time</view>
+          <view class = "scrollbox">Activity</view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view wx:for="{{jxh}}">
+      <scroll-view scroll-x>
+        <view class = "bodybox">
+          <view class = "scrollout">
+            <view class = "scrollbox2">{{(index|Int)+1}}</view>
+            <view class = "scrollbox2">{{util.sub(item.Time)}}</view>
+            <view class = "scrollbox2">{{util2.sub(item.Time)}}</view>
+            <view class = "scrollbox2">{{item.Attendance}}</view>
+          </view>
+        </view>
+      </scroll-view>  
+    </view>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 中文 -->
+  <view wx:if="{{!lang}}">
+    <view class = "box">
+      <view class = "container">
+        <view class = "txt">
+          <view class = "courseName">{{selectedClass_name}}</view>
+            <view class = "teacherName">{{selectedClass_teacher}}</view>
+            <view class = "courseTime">签到次数：{{whole}}</view>
+            <view class = "courseID">课程代码：{{selectedClass_code}}</view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class = "subtitle">
+      <view class = "subcontainer">
+        总和统计
+      </view>
+    </view>
+
+
+    <view class = "box">
+      <scroll-view scroll-x>
+        <view class = "headbox">
+          <view class = "scrollout">
+            <view class = "scrollbox">总次数</view>
+            <view class = "scrollbox">出勤次数</view>
+            <view class = "scrollbox">请假次数</view>
+            <view class = "scrollbox">缺勤次数</view>
+          </view>
+        </view>
+      </scroll-view>  
+
+      <scroll-view scroll-x>
+        <view class = "bodybox">
+          <view class = "scrollout">
+            <view class = "scrollbox2">{{whole}}</view>
+            <view class = "scrollbox2">{{cnt1}}</view>
+            <view class = "scrollbox2">{{cnt2}}</view>
+            <view class = "scrollbox2">{{cnt3}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      历史记录
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">#</view>
+          <view class = "scrollbox">日期</view>
+          <view class = "scrollbox">时间</view>
+          <view class = "scrollbox">状态</view>
+        </view>
+      </view>
+    </scroll-view>
+
+    <view wx:for="{{jxh}}" wx:key = "index">
+      <scroll-view scroll-x>
+        <view class = "bodybox">
+          <view class = "scrollout">
+            <view class = "scrollbox2_mini">{{(index|Int)+1}}</view>
+            <view class = "scrollbox2_mini">{{util.sub(item.Time)}}</view>
+            <view class = "scrollbox2_mini">{{util2.sub(item.Time)}}</view>
+            <view class = "scrollbox2_mini">{{item.Attendance}}</view>
+          </view>
+        </view>
+      </scroll-view>  
+    </view>
+</view>
+
+
+<view wx:if="{{cnt1 && !cnt2 && !cnt3}}" class="boxImage">
+  <view class="containerImage">
+    <image mode="widthFix" src="/image/juanwang.jpg"></image>
+  </view>
+</view>
+
+
+<view class="box16"></view>
+
+

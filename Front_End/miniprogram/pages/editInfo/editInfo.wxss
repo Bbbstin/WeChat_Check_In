@@ -1,0 +1,34 @@
+
+
+.title{
+  font-size: 50rpx;
+  text-align: center;
+  padding-top: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+
+.box{
+  padding: 10rpx 20rpx 20rpx 20rpx;
+}
+
+.txt{
+  font-size: 36rpx;
+  padding: 10rpx 20rpx;
+}
+
+.fillInBlank{
+  border: 1rpx solid black;
+  border-radius: 16rpx;
+  padding: 15rpx 20rpx 15rpx;
+}
+
+
+.btn-type{
+  padding: 45rpx;
+}
+
+.pad{
+  padding: 10rpx;
+}
+

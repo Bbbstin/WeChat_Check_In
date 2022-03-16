@@ -1,0 +1,73 @@
+/* pages/userInfo/userInfo.wxss *//**index.wxss**/
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+
+.box{padding: 20rpx 20rpx;}
+.container{
+  display: flex;
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+
+
+
+.container .userinfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+.container .userinfo image{width: 100%; height: 100%;}
+
+
+.container .txt{flex: 8; display: flex; flex-direction: column; justify-content: space-between; padding-left: 30rpx;  padding-top: 30rpx;  padding-bottom: 30rpx}
+.container .name{font-size: 45rpx;}
+.container .School{font-size: 36rpx; color: rgb(110, 109, 109)}
+.container .ID{font-size: 30rpx; color: rgb(110, 109, 109)}
+.container .info{font-size: 40rpx;text-align: justify;}
+.midd{padding-left: 200rpx;}
+
+
+
+.container6{
+  padding: 20rpx 20rpx;
+  border: 2rpx solid #000;
+  border-radius: 20rpx;
+}
+.container6 .txt{padding-left: 30rpx;  padding-top: 30rpx;  padding-bottom: 30rpx}
+.container6 .info{font-size: 40rpx;}
+.midd6_name{padding-left: 100rpx;}
+.midd6_school{padding-left: 83rpx;}
+.midd6_ID{padding-left: 170rpx;}
+.midd6_grade{padding-left: 94rpx;}
+.midd6_sex{padding-left: 140rpx;}
+.midd6_chinese{padding-left: 100rpx;}
+
+.text{
+  text-align: justify;
+}
+
+
+.buttons{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.padding_10{
+  padding-top: 10rpx;
+}

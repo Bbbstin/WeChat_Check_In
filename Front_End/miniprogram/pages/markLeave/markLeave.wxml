@@ -1,0 +1,181 @@
+<view class="fullPage">
+<view wx:if="{{lang}}">
+    <view class = "box">
+    <view class = "container">
+      <view class = "txt1">
+        <view class = "name">{{selectedClass_name}}</view>
+          <view class = "courseID">{{selectedClass_code}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view>
+    <picker 
+        mode="selector" 
+        bindchange="chooseTime"   
+        bindcolumnchange="bindCustomPickerColumnChange" 
+        range="{{Time_temp}}"
+        class = "select2">
+        <view>
+          Time
+          <image class="arrow-d" src="../../image/arrow-d-0.png"></image>
+        </view>
+    </picker>
+  </view>
+
+  <view class = "box1"></view>
+  <view class = "box1"></view>
+
+  <view class="line"></view>
+
+  <view class = "box1"></view>
+  <view class = "box1"></view>
+
+
+  <view wx:if="{{pickTime}}">
+  <view class="timeSize">
+    {{pickTime}}
+  </view>
+
+  <view class = "box1"></view>
+
+
+  <view class = "box1"></view>
+    <checkbox-group bindchange="checkboxgroupBindchange">
+      <view wx:for="{{absent_stu_info}}" wx:key = "index">
+        <view class = "boxLeave">
+          <view class = "containerLeave">
+            <view class = "txt1">
+              
+                <view class = "name">{{item.name}}</view>
+                <view class = "ID">{{item.ID}}</view>
+                <view>{{isDisable[index]}}</view>
+                
+                <checkbox value="{{index}}" class = "leaveBtn" bindchange="markLeave"></checkbox>
+              </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+
+    <view class = "box1"></view>
+    <view class = "box1"></view>
+
+    <view class = "btn-type">
+      <view>
+        <button bindtap="markLeave" disabled="{{isDisable_leave || isDisable_attend}}" type="primary" plain>Mark Leave</button>
+        <modal confirm-text="Yes" cancel-text="No" wx:if="{{isDisable_leave}}" bindcancel="modalHidden_leave" hidden="{{hidden_leave}}" bindconfirm="markLeave_final">
+            Are you sure to set {{chooselist}} as leave?
+        </modal>
+      </view>
+
+      <view class = "box10"></view>
+
+      <view class = "pad">
+        <button bindtap="markAttend" disabled="{{isDisable_leave || isDisable_attend}}" type="primary" plain>Mark Attend</button>
+        <modal confirm-text="Yes" cancel-text="No" wx:if="{{isDisable_attend}}" no-confirm bindcancel="modalHidden_attend" hidden="{{hidden_attend}}" bindconfirm="markAttend_final">
+            Are you sure to set {{chooselist}} as attend?
+        </modal>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+<view wx:if="{{!lang}}">
+    <view class = "box">
+    <view class = "container">
+      <view class = "txt1">
+        <view class = "name">{{selectedClass_name}}</view>
+          <view class = "courseID">{{selectedClass_code}}</view>
+      </view>
+    </view>
+  </view>
+
+
+
+  <view class="box0">
+    <picker 
+        mode="selector" 
+        bindchange="chooseTime"   
+        bindcolumnchange="bindCustomPickerColumnChange" 
+        range="{{Time_temp}}"
+        class = "select2">
+        <view>
+          日期
+          <image class="arrow-d" src="../../image/arrow-d-0.png"></image>
+        </view>
+    </picker>
+  </view>
+
+  <view class = "box1"></view>
+  <view class = "box1"></view>
+
+  <view class="line"></view>
+
+  <view class = "box1"></view>
+  <view class = "box1"></view>
+
+
+  <view wx:if="{{pickTime}}">
+  <view class="timeSize">
+    {{pickTime}}
+  </view>
+
+  <view class = "box1"></view>
+
+
+  <view class = "box1"></view>
+    <checkbox-group bindchange="checkboxgroupBindchange">
+      <view wx:for="{{absent_stu_info}}" wx:key = "index">
+        <view class = "boxLeave">
+          <view class = "containerLeave">
+            <view class = "txt1">
+              
+                <view class = "name">{{item.name}}</view>
+                <view class = "ID">{{item.Stu_id}}</view>
+                <view>{{isDisable[index]}}</view>
+                
+                <checkbox value="{{index}}" class = "leaveBtn" bindchange="markLeave"></checkbox>
+              </view>
+          </view>
+        </view>
+      </view>
+    </checkbox-group>
+
+    <view class = "box1"></view>
+    <view class = "box1"></view>
+
+    <view class = "btn-type">
+      <view>
+        <button bindtap="markLeave" disabled="{{isDisable_leave || isDisable_attend}}" type="primary" plain>记为请假</button>
+        <modal confirm-text="确定" cancel-text="取消" wx:if="{{isDisable_leave}}" bindcancel="modalHidden_leave" hidden="{{hidden_leave}}" bindconfirm="markLeave_final">
+            您确定要将 {{chooselist}} 记为请假吗?
+        </modal>
+      </view>
+
+      <view class = "box10"></view>
+
+      <view class = "pad">
+        <button bindtap="markAttend" disabled="{{isDisable_leave || isDisable_attend}}" type="primary" plain>记为出勤</button>
+        <modal confirm-text="确定" cancel-text="取消" wx:if="{{isDisable_attend}}" no-confirm bindcancel="modalHidden_attend" hidden="{{hidden_attend}}" bindconfirm="markAttend_final">
+            您确定要将 {{chooselist}} 记为出勤吗?
+        </modal>
+      </view>
+    </view>
+
+  </view>
+</view>
+</view>
+
+<view class="padding_50"></view>

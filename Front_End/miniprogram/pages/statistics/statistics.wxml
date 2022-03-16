@@ -1,0 +1,110 @@
+
+<view wx:if="{{!lang}}">
+  <view class = "box3" wx:if="{{!isLogin}}">
+    <navigator url="/pages/editInfo/editInfo">
+      <view class = "container">
+        <view class = "txt1">
+          <view class = "name">你暂时无权访问该内容</view> 
+          <view class = "name">—————————</view>
+          <view class = "name">请先登录</view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+
+
+  <view wx:if="{{isLogin}}">
+
+    <view class = "box7" wx:if="{{!lessonList[0]}}">
+          <view class = "container7">
+            <view class = "txt">
+              <view class = "name">您暂时没有课</view> 
+              <view class = "name">—————————</view>
+              <view class = "name">请及时享乐</view>
+            </view>
+          </view>
+    </view>
+
+
+    <view wx:if="{{lessonList[0]}}">
+    <picker 
+        mode="selector" 
+        bindchange="chooseCourse"   
+        bindcolumnchange="bindCustomPickerColumnChange" 
+        range="{{lessonList_temp}}"
+        class = "select1">
+        <view>
+          课程
+          <image class="arrow-d" src="../../image/arrow-d-0.png"></image>
+        </view>
+    </picker>
+
+    <picker 
+        mode="selector" 
+        bindchange="choosedim"   
+        bindcolumnchange="bindCustomPickerColumnChange" 
+        range="{{dimlist}}"
+        class = "select3">
+        <view>
+          维度
+          <image class="arrow-d" src="../../image/arrow-d-0.png"></image>
+        </view>
+    </picker>
+
+
+
+
+
+    <view class = "box">
+      <view class = "container">
+        <view class = "txt">
+          <text style="padding-left: 50rpx" space = "nbsp">选择的课程:            {{lessonList_temp[pickCourse]}}</text>
+          <text style="padding-left: 50rpx" space = "nbsp">选择的维度:            {{dimlist[pickdim]}}</text>
+        </view>
+      </view>
+    </view>
+
+
+
+
+  
+  </view>
+  <button type = "primary" plain bindtap="searchInfo" wx:if="{{lessonList[0]}}" disabled="{{(!lessonList_temp[pickCourse] || !dimlist[pickdim])}}">查询</button>
+  </view>
+
+  <view class = "padding_12"></view>
+
+  <view class = "box2"  wx:if="{{showSta && lessonList_temp[pickCourse] && dimlist[pickdim]}}">
+    <view class = "container">
+      <view class = "txt">
+        <view class = "sch">出勤情况</view>
+        <view class = "note">(绿色出勤, 黄色请假, 红色缺勤)</view>
+        <view wx:for="{{majorList}}" wx:key = "index">
+          <view class="padding">
+            <view>{{majorList[index]}}</view>
+            <view class="cu-progress radius margin-top">
+              <view class="bg-green" style="width:{{loading?(rate_attend[index]) + '%':''}};">
+                <text wx:if="{{rate_attend[index] >= 5}}">{{rate_attend[index]}}%</text>
+                <text wx:else>-</text>
+              </view>
+            <!-- </view>
+            <view class="cu-progress radius margin-top"> -->
+              <view class="bg-yellow" style="width:{{loading?(rate_leave[index]) + '%':''}};">
+                <text wx:if="{{rate_leave[index] >= 5}}">{{rate_leave[index]}}%</text>
+                <text wx:else>-</text>
+              </view>
+            <!-- </view>
+            <view class="cu-progress radius margin-top"> -->
+              <view class="bg-red" style="width:{{loading?(rate_not[index]) + '%':''}};">
+                <text wx:if="{{rate_not[index] >= 5}}">{{rate_not[index]}}%</text>
+                <text wx:else>-</text>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

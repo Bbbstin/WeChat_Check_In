@@ -1,0 +1,347 @@
+<!-- English Version -->
+<!-- Student -->
+<view wx:if="{{lang}}">
+  <view wx:if="{{!identity}}">
+    <view class = "box">
+      <view class = "container">
+        <view class = "txt">
+          <view class = "courseName">
+            Click the button below to scan the QR-Code.
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class = "box1">
+      <view class = "txt2">
+        <view wx:if="{{!result}}">
+          Please scan the QR-Code provided by the teacher before checking-in.
+        </view>
+
+        <view wx:elif="{{checkCode==selectedClass_code && checkInTime <= checkTime}}">
+          You can check-in now.
+        </view>
+
+        <view wx:elif="{{checkCode!=selectedClass_code && checkInTime <= checkTime}}">
+          Please scan the correct QR-Code.
+        </view>
+
+        <view wx:elif="{{checkInTime > checkTime}}">
+          Wrong QR-Code or over time.
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+    <view class="box1">
+      <button type="primary" bindtap="scanCode">Scan</button>
+    </view>
+    <view class="box1"></view>
+  
+
+
+
+    <view class="box1"></view>
+    <view class="box1"></view>
+
+    <view class="line"></view>
+
+    <view class="box1"></view>
+    <view class="box1"></view>
+
+
+    <view wx:if="{{checkCode==selectedClass_code && checkInTime <= checkTime}}">
+      <view class="box1">
+        <!-- <navigator class = "container" url = "/pages/checkIn_stu/checkIn_stu"> -->
+        <navigator class = "container" url = "{{checkurl}}">
+          <view class = "txt">
+            <view class="courseName">Check-In Now</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    <view wx:else>
+      <view class="box1">
+        <view class = "containerno" url = "{{checkurl}}">
+          <view class = "txt">
+            <view class="courseName">Check-In Now</view>
+          </view>
+      </view>
+    </view>
+  </view>
+
+
+    <view class="box1">
+      <navigator class = "container" url = "/pages/checkIn_his/checkIn_his">
+        <view class = "txt">
+          <view class="courseName">Check-In History</view>
+        </view>
+      </navigator>
+    </view>
+</view>
+
+
+
+
+
+<!-- teacher -->
+  <view wx:else>
+    <view class = "box1">
+      <view class = "container">
+        <view class = "txt">
+          <view class = "courseName">
+            Welcome to my check-in application!
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="box1"></view> 
+
+    <view class="line"></view>
+
+    <view class="box1"></view> 
+
+
+
+    <view class="box1">
+      <navigator class = "container" url="/pages/launch1/launch1">
+        <view class = "txt">
+          <view class="courseName">Launch a New Check-In Task</view>
+        </view>
+      </navigator>
+    </view>
+
+
+    <view class="box1">
+      <navigator class = "container" url="/pages/checkIn_his_tea/checkIn_his_tea">
+        <view class = "txt">
+          <view class="courseName">Check-In History</view>
+        </view>
+      </navigator>
+    </view>
+
+
+    <view class="box1">
+      <navigator class = "container" url="/pages/markLeave/markLeave">
+        <view class = "txt">
+          <view class="courseName">Mark Leave</view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Chinese Version -->
+<!-- Student -->
+<view wx:if="{{!lang}}">
+  <view wx:if="{{!identity}}">
+    <view class = "box">
+      <view class = "container">
+        <view class = "txt">
+          <text space = "nbsp" class="courseName">\n</text>
+          <view class = "courseName">
+            扫描二维码
+          </view>
+          <view class = "courseName">
+            课程名称: {{selectedClass_name}}
+          </view>
+          <text space = "nbsp" class="courseName">\n</text>
+        </view>
+      </view>
+    </view>
+
+
+    <!-- Scan QR-Code and check if it is the right one -->
+    <view class = "box1">
+      <view class = "txt2">
+        <view wx:if="{{!result}}">
+          请扫描老师提供的二维码
+        </view>
+
+        <view wx:elif="{{checkCode==selectedClass_code && checkInTime <= checkTime}}">
+          你可以进行签到了
+        </view>
+
+        <view wx:elif="{{checkCode!=selectedClass_code && checkInTime <= checkTime}}">
+          请扫描正确的二维码
+        </view>
+
+        <view wx:elif="{{checkInTime > checkTime}}">
+          二维码错误或已错过签到时间
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+
+
+    <view class="box1">
+      <button type="primary" plain bindtap="scanCode">扫码</button>
+    </view>
+    <view class="box1"></view>
+  
+
+
+
+    <view class="box1"></view>
+    <view class="box1"></view>
+
+    <view class="line"></view>
+
+    <view class="box1"></view>
+    <view class="box1"></view>
+
+
+
+    <!-- can check -->
+    <view wx:if="{{checkCode==selectedClass_code && checkInTime <= checkTime}}">
+      <view class="box1">
+        <navigator class = "container" url = "{{checkurl}}">
+          <view class = "txt">
+            <view class="courseName">签到</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    <!-- cannot check -->
+    <view wx:else>
+      <view class="box1">
+        <view class = "containerno" url = "{{checkurl}}">
+          <view class = "txt">
+            <view class="courseName">签到</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="box1">
+      <navigator class = "container" url = "/pages/checkIn_his/checkIn_his">
+        <view class = "txt">
+          <view class="courseName">历史签到记录</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+
+
+
+
+
+
+<!-- 老师 -->
+  <view wx:else>
+    <view class = "box1">
+      <view class = "container">   
+        <view class = "txt">
+          <text space = "nbsp" class="courseName">\n</text>
+          <view class = "courseName">
+            欢迎来到签到界面！
+          </view>
+          <text space = "nbsp" class="courseName">\n</text>
+        </view>
+      </view>
+    </view>
+
+
+
+    <view class="box1"></view> 
+
+    <view class="line"></view>
+
+    <view class="box1"></view> 
+
+
+
+  
+    
+    <view class="box1" wx:if="{{nowDay != lastTime}}">
+      <navigator class = "container" url="/pages/launch1/launch1">
+        <view class = "txt">
+          <view class="courseName">发起签到任务</view>
+        </view>
+      </navigator>
+    </view>
+
+    <!-- cannot launch checkin -->
+    <view wx:else>
+      <view class="box1">
+        <view class = "containerno" url = "{{checkurl}}">
+          <view class = "txt">
+            <view class="courseName">今日已发起过签到</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+
+
+
+
+    <view class="box1">
+      <navigator class = "container" url="/pages/checkIn_his_tea/checkIn_his_tea">
+        <view class = "txt">
+          <view class="courseName">历史签到记录</view>
+        </view>
+      </navigator>
+    </view>
+
+
+    <view class="box1">
+      <navigator class = "container" url="/pages/markLeave/markLeave">
+        <view class = "txt">
+          <view class="courseName">缺勤情况查询与修改</view>
+        </view>
+      </navigator>
+    </view>
+
+  </view>
+</view>
+
+<view class="padding_50"></view>

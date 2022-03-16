@@ -1,0 +1,127 @@
+<view wx:if="{{lang}}">
+    <view class = "box">
+        <view class = "container">
+            <view class = "txt">
+            <view class = "courseName">{{selectedClass_name}}</view>
+                <view class = "teacherName">{{selectedClass_teacher}}</view>
+                <view class = "courseTime">{{selectedClass_time}}</view>
+                <view class = "courseID">{{selectedClass_code}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="add-page">
+
+    <view class="mod-a">
+        <view class="mod t-name">
+            <text class="key">Name</text>
+            <text class="input">{{name}}</text>
+        </view>         
+    </view>
+
+
+
+    <view class="mod-a mt20">
+        <view class="mod t-address">
+            <text class="key">ID</text>
+            <text class="value">{{ID}}</text>
+        </view>
+        <view class="mod t-address">
+            <text class="key">School</text>
+            <text class="value">{{school}}</text>
+        </view>
+        <view class="mod t-address">
+            <text class="key">Time</text>
+            <text class="value">{{checkT}} {{checkTi}}</text>
+        </view>
+    </view>
+
+
+
+    <view class="mod-a mt20">
+        <!-- place -->
+        <view class="mod t-address" bindtap="checkDistance">
+            <text class="key">Distance</text>
+            <text class="value" wx:if="{{tempFlag}}">{{nowDist}}m</text>
+            <image class="arrow-r" src="../../image/arrow-r-0.png"></image>
+        </view>
+    </view>
+
+    <view class="box1"></view>
+
+    <button type="primary" bindtap = "submit" wx:if="{{nowDist <= 250}}">Check-In</button>
+    <button type="primary" disabled="True" wx:else>Check-In</button>
+
+
+    <view class="mod-a mt20"></view>
+    </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<view wx:if="{{!lang}}">
+    <view class = "box">
+        <view class = "container">
+            <view class = "txt">
+                <view class = "courseName">{{selectedClass_name}}</view>
+                <view class = "courseID">{{selectedClass_code}}</view>
+                <view class = "teacher">{{selectedClass_place}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="add-page">
+
+    <view class="mod-a">
+        <view class="mod t-name">
+            <text class="key">姓名</text>
+            <text class="input">{{name}}</text>
+        </view>         
+    </view>
+
+
+
+    <view class="mod-a mt20">
+        <view class="mod t-address">
+            <text class="key">ID</text>
+            <text class="value">{{ID}}</text>
+        </view>
+        <view class="mod t-address">
+            <text class="key">院系</text>
+            <text class="value">{{school}}</text>
+        </view>
+        <view class="mod t-address">
+            <text class="key">时间</text>
+            <text class="value">{{checkT}} {{checkTi}}</text>
+        </view>
+    </view>
+
+
+
+    <view class="mod-a mt20">
+        <view class="mod t-address" bindtap="checkDistance">
+            <text class="key">距离签到地点</text>
+            <text class="value" wx:if="{{tempFlag}}">{{nowDist}}m</text>
+            <image class="arrow-r" src="../../image/arrow-r-0.png"></image>
+        </view>
+    </view>
+
+    <view class="box1"></view>
+
+    <button type="primary" plain bindtap = "submit" wx:if="{{nowDist <= 200}}">签到</button>
+    <button type="primary" plain disabled="True" wx:else>签到</button>
+
+
+    <view class="mod-a mt20"></view>
+    </view>
+</view>

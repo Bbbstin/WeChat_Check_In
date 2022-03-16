@@ -1,0 +1,189 @@
+<!-- English Version -->
+<view wx:if="{{lang}}">     
+  <view class = "box">
+    <view class="container">
+      <view class="userinfo">
+        <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+          <view class="userinfo-avatar" bindtap="bindViewTap">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+        </block>
+        <block wx:else>
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </block>
+      </view>
+
+      <view class = "txt">
+        <view class = "name" wx:if="{{!userName}}">
+          <open-data type="userNickName"></open-data>
+        </view>
+        <view class = "name" wx:elif="{{userName}}">
+          {{userName}}
+        </view>
+
+
+
+
+        <view class = "ID" wx:if="{{!ID}}">
+          Not filled yet
+        </view>
+        <view class = "ID" wx:elif="{{ID}}">
+          {{ID}}
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class = "box" wx:if="{{!userName && !ID}}">
+    <navigator class = "container" url="/pages/editInfo/editInfo">
+      <view>Edit My Information</view>
+    </navigator>
+  </view>
+
+  <view class = "box" wx:if="{{userName && ID}}">
+      <view class = "container6">
+        <view class = "txt">
+          <view class="info">
+            <text space = "nbsp">Name: </text> 
+            <text space = "nbsp" class = "midd6_name">{{userName}}</text> 
+          </view>
+          <view class="info" wx:if="{{major}}">
+            <text space = "nbsp">Major: </text> 
+            <text space = "nbsp" class = "midd6_school">{{dep}}</text> 
+          </view>
+          <view class="info">
+            <text space = "nbsp">ID: </text> 
+            <text space = "nbsp" class = "midd6_ID">{{ID}}</text> 
+          </view>
+          <view class="info" wx:if="{{grade}}">
+            <text space = "nbsp">Grade: </text> 
+            <text space = "nbsp" class = "midd6_grade">{{grade}}</text> 
+          </view>
+          <view class="info">
+            <text space = "nbsp">Sex: </text> 
+            <text space = "nbsp" class = "midd6_sex">Male</text> 
+          </view>
+        </view>
+      </view>
+  </view>
+
+
+  <view class = "buttons" >
+    <navigator open-type = "redirect" url = "/pages/index/index">
+      <button bindtap="cleanAll" class = "btn1" type = "warn" plain>Log Out</button>
+    </navigator>
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Chinese Version -->
+<view wx:if="{{!lang}}">
+  <view class = "box">
+    <view class="container">
+      <view class="userinfo">
+        <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+          <view class="userinfo-avatar" bindtap="bindViewTap">
+            <open-data type="userAvatarUrl"></open-data>
+          </view>
+        </block>
+        <block wx:else>
+          <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </block>
+      </view>
+
+      <view class = "txt">
+        <view class = "name" wx:if="{{!userName}}">
+          <open-data type="userNickName"></open-data>
+        </view>
+        <view class = "name" wx:elif="{{userName}}">
+          {{userName}}
+        </view>
+
+
+
+
+        <view class = "ID" wx:if="{{!ID}}">
+          未填写
+        </view>
+        <view class = "ID" wx:elif="{{ID}}">
+          {{ID}}
+        </view>
+
+      </view>
+    </view>
+  </view>
+
+  <view class = "box" wx:if="{{!userName && !ID}}">
+    <navigator class = "container" url="/pages/editInfo/editInfo">
+      <view style="padding-left: 25rpx; font-size: 36rpx">编辑信息</view>
+    </navigator>
+  </view>
+
+  <view class="padding_10"></view>
+
+  <view class = "box" wx:if="{{userName && ID}}">
+      <view class = "container6">
+        <view class = "txt">
+          <view class="info">
+            <text space = "nbsp">姓名: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{userName}}</text> 
+          </view>
+          <view class="info" wx:if="{{flag==0}}">
+            <text space = "nbsp">学号: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{ID}}</text> 
+          </view>
+          <view class="info" wx:if="{{dep}}">
+            <text space = "nbsp">学院: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{dep}}</text> 
+          </view>
+          <view class="info" wx:if="{{major}}">
+            <text space = "nbsp">专业: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{major}}</text> 
+          </view>
+          <view class="info" wx:if="{{flag==1}}">
+            <text space = "nbsp">工号: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{ID}}</text> 
+          </view>
+          <view class="info" wx:if="{{grade}}">
+            <text space = "nbsp">年级: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{grade}}</text> 
+          </view>
+          <view class="info" wx:if="{{sex}}">
+            <text space = "nbsp">性别: </text> 
+            <text space = "nbsp" class = "midd6_chinese">{{sex}}</text> 
+          </view>
+        </view>
+      </view>
+  </view>
+
+
+  <view class = "buttons" wx:if="{{!userName && !ID}}">
+    <navigator open-type = "redirect" url = "/pages/index/index">
+      <button bindtap="cleanAll" class = "btn1" type = "warn" plain>切换身份</button>
+    </navigator>
+  </view>
+
+  <view class="padding_10"></view>
+
+  <button open-type="contact" type = "primary" plain>联系开发者(之一)</button>
+
+
+
+</view>
+
+

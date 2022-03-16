@@ -1,0 +1,185 @@
+<!-- English -->
+<view wx:if="{{lang}}">
+  <view class = "box">
+    <view class = "container">
+      <view class = "txt">
+        <view class = "courseName">{{selectedClass_name}}</view>
+          <view class = "courseTime">Numbers：{{selectedClass_wholenum}}</view>
+          <view class = "courseID">Code：{{selectedClass_code}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      LATEST
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">Total Num</view>
+          <view class = "scrollbox">Check-In</view>
+          <view class = "scrollbox">Leave</view>
+          <view class = "scrollbox">Absence</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view>
+      <scroll-view scroll-x>
+        <view class = "bodybox">
+          <view class = "scrollout">
+            <view class = "scrollbox2">{{a1+a2+a3|Int}}</view>
+            <view class = "scrollbox2">{{a1}}</view>
+            <view class = "scrollbox2">{{a2}}</view>
+            <view class = "scrollbox2">{{a3}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      HISTORY
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">Date</view>
+          <view class = "scrollbox">Check-In</view>
+          <view class = "scrollbox">Leave</view>
+          <view class = "scrollbox">Absence</view>
+        </view>
+      </view>
+    </scroll-view>
+
+      <view wx:for="{{jxh}}">
+        <scroll-view scroll-x>
+          <view class = "bodybox">
+            <view class = "scrollout">
+              <view class = "scrollbox2_mini">{{item.time}}</view>
+              <view class = "scrollbox2_mini">{{item.attend}}</view>
+              <view class = "scrollbox2_mini">{{item.leave}}</view>
+              <view class = "scrollbox2_mini">{{item.absent}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+  </view>
+</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Chinese -->
+<view wx:if="{{!lang}}">
+  <view class = "box">
+    <view class = "container">
+      <view class = "txt">
+        <view class = "courseName">{{selectedClass_name}}</view>
+          <view class = "courseTime">课程人数：{{selectedClass_wholenum}}</view>
+          <view class = "courseID">课程代码：{{selectedClass_code}}</view>
+      </view>
+    </view>
+  </view>
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      最近一次考勤记录
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">总和</view>
+          <view class = "scrollbox">出勤</view>
+          <view class = "scrollbox">请假</view>
+          <view class = "scrollbox">缺勤</view>
+        </view>
+      </view>
+    </scroll-view>
+    <view>
+      <scroll-view scroll-x>
+        <view class = "bodybox" >
+          <view class = "scrollout">
+            <view class = "scrollbox2">{{a1+a2+a3|Int}}</view>
+            <view class = "scrollbox2">{{a1}}</view>
+            <view class = "scrollbox2">{{a3}}</view>
+            <view class = "scrollbox2">{{a2}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+
+
+
+
+  <view class = "subtitle">
+    <view class = "subcontainer">
+      历史记录
+    </view>
+  </view>
+
+
+  <view class = "box">
+    <scroll-view scroll-x>
+      <view class = "headbox">
+        <view class = "scrollout">
+          <view class = "scrollbox">日期</view>
+          <view class = "scrollbox">出勤</view>
+          <view class = "scrollbox">请假</view>
+          <view class = "scrollbox">缺勤</view>
+        </view>
+      </view>
+    </scroll-view>
+
+      <view wx:for="{{jxh}}">
+        <scroll-view scroll-x>
+          <view class = "bodybox">
+            <view class = "scrollout">
+              <view class = "scrollbox2_mini">{{item.time}}</view>
+              <view class = "scrollbox2_mini">{{item.attend}}</view>
+              <view class = "scrollbox2_mini">{{item.leave}}</view>
+              <view class = "scrollbox2_mini">{{item.absent}}</view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+
+  </view>
+
+  <view class="padding_10"></view>
+  <view class="padding_10"></view>
+
+  <button bindtap="getForm" type = "primary" wx:if="{{jxh[0]}}" plain>下载考勤记录</button>
+
+</view>
